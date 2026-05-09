@@ -20,12 +20,12 @@
         }
 
         /* ======================== */
-        /* ONLY CSS CHANGES START HERE */
+        /* ONLY CSS CHANGES START HERE — WHITE/BLACK/RED PREMIUM THEME */
         /* ======================== */
         
         body {
-            background: radial-gradient(circle at 20% 30%, #0a0f2a, #03050f);
-            color: #ffffff;
+            background: linear-gradient(145deg, #000000 0%, #1a0505 100%);
+            color: #f0f0f0;
             padding: 18px;
             min-height: 100vh;
             position: relative;
@@ -38,7 +38,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 80% 20%, rgba(0, 150, 255, 0.1), transparent 70%);
+            background: radial-gradient(circle at 90% 10%, rgba(255, 40, 40, 0.25), transparent 75%);
             pointer-events: none;
             z-index: 0;
         }
@@ -50,27 +50,28 @@
             z-index: 1;
         }
 
-        /* Cooldown Notification - Blue/Black Dating Style */
+        /* Cooldown Notification — Red/Black Dynamic */
         .cooldown-notification {
             position: fixed;
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(135deg, #0f1a3a, #030617);
-            color: #ffffff;
+            background: #0a0a0a;
+            backdrop-filter: blur(12px);
+            color: #ff2a2a;
             padding: 14px 28px;
             border-radius: 60px;
             font-weight: 800;
             font-size: 16px;
             z-index: 10001;
-            box-shadow: 0 0 30px #0066ff, 0 5px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 0 35px #ff3333, 0 5px 20px rgba(0,0,0,0.6);
             animation: slideUp 0.3s ease;
             display: flex;
             align-items: center;
             gap: 12px;
             letter-spacing: 1px;
-            border: 1px solid #3399ff;
-            backdrop-filter: blur(8px);
+            border: 1.5px solid #ff3a3a;
+            text-shadow: 0 0 3px #ff0000;
         }
         
         @keyframes slideUp {
@@ -84,24 +85,25 @@
             }
         }
         
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); text-shadow: 0 0 2px #66ccff; }
-            50% { transform: scale(1.05); text-shadow: 0 0 12px #3399ff; }
+        @keyframes pulseRedGlow {
+            0%, 100% { transform: scale(1); text-shadow: 0 0 2px #ff6666; }
+            50% { transform: scale(1.05); text-shadow: 0 0 14px #ff0000; }
         }
         
         .cooldown-notification i {
             font-size: 24px;
-            animation: pulse 1s infinite;
+            animation: pulseRedGlow 1s infinite;
         }
 
-        /* Verification Overlay - BLUE/BLACK THEME */
+        /* Verification Overlay - PREMIUM BLACK/WHITE/RED */
         .verify-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(145deg, #020617, #00020b);
+            background: #000000ee;
+            backdrop-filter: blur(12px);
             z-index: 10000;
             display: flex;
             align-items: center;
@@ -115,28 +117,29 @@
             pointer-events: none;
         }
         .verify-box {
-            background: rgba(2, 10, 30, 0.85);
-            backdrop-filter: blur(18px);
+            background: rgba(5, 5, 5, 0.96);
+            backdrop-filter: blur(20px);
             padding: 50px 40px;
             border-radius: 60px;
             text-align: center;
             max-width: 380px;
             width: 90%;
-            box-shadow: 0 0 80px rgba(0, 100, 255, 0.5);
-            border: 2px solid #3388ff;
-            animation: borderPulse 2s infinite;
+            box-shadow: 0 0 90px rgba(255, 30, 30, 0.9);
+            border: 3px solid #ff1a1a;
+            animation: borderRedPulse 1.8s infinite;
         }
-        @keyframes borderPulse {
-            0% { border-color: #2266cc; box-shadow: 0 0 30px #2266cc; }
-            50% { border-color: #66aaff; box-shadow: 0 0 30px #66aaff; }
-            100% { border-color: #2266cc; box-shadow: 0 0 30px #2266cc; }
+        @keyframes borderRedPulse {
+            0% { border-color: #aa2222; box-shadow: 0 0 35px #ff2222; }
+            50% { border-color: #ff4d4d; box-shadow: 0 0 65px #ff2a2a; }
+            100% { border-color: #aa2222; box-shadow: 0 0 35px #ff2222; }
         }
         .verify-icon {
             font-size: 80px;
-            background: linear-gradient(135deg, #3388ff, #aa66ff);
+            background: linear-gradient(135deg, #ffffff, #ff3030);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 20px;
+            filter: drop-shadow(0 0 12px #ff0000);
         }
         .verify-box h2 {
             color: white;
@@ -144,18 +147,19 @@
             font-size: 28px;
             font-weight: 800;
             letter-spacing: 2px;
-            background: linear-gradient(135deg, #88ccff, #aa88ff);
+            background: linear-gradient(135deg, #ffcccc, #ff4d4d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .verify-box p {
-            color: #bbddff;
+            color: #ffbbbb;
             margin-bottom: 30px;
             font-size: 14px;
             line-height: 1.6;
+            font-weight: 500;
         }
         .watch-video-btn {
-            background: linear-gradient(135deg, #2266dd, #8844ff);
+            background: linear-gradient(135deg, #b91c1c, #ff2a2a);
             color: white;
             border: none;
             padding: 16px 50px;
@@ -163,14 +167,15 @@
             font-size: 22px;
             font-weight: 800;
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: transform 0.2s, box-shadow 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            box-shadow: 0 0 30px #3388ff;
+            box-shadow: 0 0 35px #ff3b3b;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
-        .watch-video-btn:hover { transform: scale(1.05); box-shadow: 0 0 40px #66aaff; }
+        .watch-video-btn:hover { transform: scale(1.05); box-shadow: 0 0 55px #ff5555; background: linear-gradient(135deg, #cf2424, #ff3f3f);}
         .watch-video-btn:disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -184,13 +189,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #030614ee;
+            background: #000000dd;
+            backdrop-filter: blur(12px);
             z-index: 9999;
             display: none;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            backdrop-filter: blur(10px);
         }
         .loading-overlay.show {
             display: flex;
@@ -198,8 +203,8 @@
         .loading-spinner {
             width: 60px;
             height: 60px;
-            border: 5px solid #3388ff;
-            border-top-color: #ff66cc;
+            border: 5px solid #ff4d4d;
+            border-top-color: #ffffff;
             border-radius: 50%;
             animation: spin 1s linear infinite;
             margin-bottom: 20px;
@@ -208,33 +213,29 @@
             to { transform: rotate(360deg); }
         }
         .loading-text {
-            color: #88ccff;
+            color: #ffbbbb;
             font-size: 18px;
             font-weight: 600;
             letter-spacing: 2px;
+            text-shadow: 0 0 5px #ff0000;
         }
 
         .content-hidden {
             display: none;
         }
 
-        /* Glass Card - Blue/Black */
+        /* Glass Card - Black/Red dynamic */
         .glass-card {
-            background: rgba(10, 20, 45, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid #4488ff;
+            background: rgba(8, 8, 8, 0.85);
+            backdrop-filter: blur(14px);
+            border: 1.5px solid #ff3a3a;
             border-radius: 32px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.5);
         }
 
-        .neon-pink {
-            color: #ff66cc;
-            text-shadow: 0 0 5px #ff88cc, 0 0 10px #ff44aa;
-        }
-
-        .neon-blue {
-            color: #3388ff;
-            text-shadow: 0 0 5px #66aaff, 0 0 10px #2266dd;
+        .neon-red {
+            color: #ff3a3a;
+            text-shadow: 0 0 6px #ff2222, 0 0 12px #ff0000;
         }
 
         .premium-header {
@@ -245,25 +246,25 @@
         }
 
         .vip-badge {
-            background: linear-gradient(135deg, #3388ff, #8844ff);
+            background: linear-gradient(135deg, #ff1a1a, #aa0000);
             color: white;
             font-weight: 900;
             padding: 10px 24px;
             border-radius: 40px;
             font-size: 15px;
             letter-spacing: 2px;
-            box-shadow: 0 0 20px #3366ff;
-            border: 1px solid #88aaff;
+            box-shadow: 0 0 18px #ff3a3a;
+            border: 1px solid #ff8282;
             text-transform: uppercase;
         }
 
         .online-counter {
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.7);
             backdrop-filter: blur(8px);
             padding: 10px 18px;
             border-radius: 40px;
-            border: 1px solid #66aaff;
-            color: #88ccff;
+            border: 1px solid #ff4d4d;
+            color: #ffbbbb;
             font-weight: 600;
             font-size: 14px;
         }
@@ -273,16 +274,16 @@
             margin-bottom: 25px;
             border-radius: 36px;
             overflow: hidden;
-            border: 2px solid #4488ff;
-            box-shadow: 0 0 30px #2266cc;
+            border: 2px solid #ff2a2a;
+            box-shadow: 0 0 35px #ff1a1a;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.25s;
         }
 
         .hero-premium:hover {
-            border-color: #88aaff;
-            box-shadow: 0 0 40px #3388ff;
-            transform: scale(1.02);
+            border-color: #ff6a6a;
+            box-shadow: 0 0 55px #ff3a3a;
+            transform: scale(1.01);
         }
 
         .hero-img-container {
@@ -296,13 +297,13 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: blur(18px) brightness(0.9);
+            filter: blur(16px) brightness(0.85);
             transform: scale(1.1);
             transition: 0.4s;
         }
 
         .hero-premium:hover img {
-            filter: blur(15px) brightness(1);
+            filter: blur(13px) brightness(1);
         }
 
         .hero-overlay {
@@ -315,8 +316,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: rgba(0,0,0,0.3);
-            backdrop-filter: blur(2px);
+            background: rgba(0,0,0,0.45);
         }
 
         .hero-title-big {
@@ -324,26 +324,26 @@
             font-weight: 900;
             text-transform: uppercase;
             color: white;
-            text-shadow: 0 0 20px #3388ff, 0 0 40px #2266cc;
+            text-shadow: 0 0 20px #ff2a2a, 0 0 40px #ff0000;
             letter-spacing: 4px;
             margin-bottom: 10px;
         }
 
         .hero-badge-premium {
-            background: linear-gradient(45deg, #2266dd, #8844ff);
+            background: linear-gradient(45deg, #bb2222, #ff2a2a);
             padding: 12px 30px;
             border-radius: 50px;
             font-weight: 800;
             font-size: 18px;
             letter-spacing: 3px;
             border: 2px solid white;
-            box-shadow: 0 0 30px #3388ff;
+            box-shadow: 0 0 30px #ff3333;
             color: white;
         }
 
         .play-giant {
             font-size: 70px;
-            filter: drop-shadow(0 0 30px rgba(51,136,255,0.8));
+            filter: drop-shadow(0 0 30px #ff3a3a);
             margin-bottom: 15px;
             color: white;
         }
@@ -355,12 +355,13 @@
             right: 20px;
             display: flex;
             justify-content: space-between;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.8);
             padding: 12px 20px;
             border-radius: 40px;
             backdrop-filter: blur(8px);
-            border-left: 6px solid #4488ff;
-            color: white;
+            border-left: 6px solid #ff3a3a;
+            color: #fee0e0;
+            font-weight: 700;
         }
 
         .section-title-premium {
@@ -373,18 +374,18 @@
         .section-title-premium h2 {
             font-size: 22px;
             font-weight: 800;
-            background: linear-gradient(to right, #66aaff, #4488ff);
+            background: linear-gradient(to right, #ffffff, #ff6a6a);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 8px #66aaff;
+            text-shadow: 0 0 6px #ff1a1a;
         }
 
         .view-all {
-            color: #66aaff;
+            color: #ff6a6a;
             font-size: 14px;
-            font-weight: 600;
-            text-shadow: 0 0 4px #88bbff;
-            border-bottom: 2px dotted #4488ff;
+            font-weight: 700;
+            text-shadow: 0 0 4px #ff0000;
+            border-bottom: 2px dotted #ff3a3a;
             padding-bottom: 2px;
             cursor: pointer;
         }
@@ -396,23 +397,23 @@
         }
 
         .blur-card {
-            background: rgba(10, 20, 50, 0.7);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 5, 5, 0.8);
+            backdrop-filter: blur(12px);
             border-radius: 24px;
             padding: 14px;
-            border: 1px solid #4488ff;
+            border: 1px solid #ff3a3a;
             transition: 0.25s;
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
         }
 
         .blur-card:hover {
-            border-color: #88aaff;
-            background: rgba(30, 50, 100, 0.6);
+            border-color: #ff6a6a;
+            background: rgba(40, 10, 10, 0.75);
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px #2266cc40;
+            box-shadow: 0 18px 35px #ff1a1a55;
         }
 
         .blur-image {
@@ -420,27 +421,27 @@
             height: 150px;
             object-fit: cover;
             border-radius: 18px;
-            filter: blur(12px) brightness(0.9);
+            filter: blur(12px) brightness(0.8);
             transition: 0.3s;
-            border: 1px solid #4488ff;
+            border: 1px solid #ff3a3a;
             cursor: pointer;
         }
 
         .blur-card:hover .blur-image {
-            filter: blur(10px) brightness(1);
+            filter: blur(8px) brightness(1);
         }
 
         .card-badge {
             position: absolute;
             top: 22px;
             right: 22px;
-            background: linear-gradient(135deg, #3388ff, #8844ff);
+            background: linear-gradient(135deg, #dd2222, #ff4d4d);
             padding: 6px 16px;
             border-radius: 30px;
             font-weight: 800;
             font-size: 12px;
-            border: 1px solid white;
-            box-shadow: 0 0 15px #3388ff;
+            border: 1px solid #ffffff;
+            box-shadow: 0 0 15px #ff5555;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: white;
@@ -453,7 +454,7 @@
             font-size: 17px;
             display: flex;
             justify-content: space-between;
-            color: #ccddff;
+            color: #ffd6d6;
             pointer-events: none;
         }
 
@@ -462,11 +463,11 @@
             justify-content: space-between;
             align-items: center;
             margin-top: 10px;
-            color: #99bbff;
+            color: #ffaaaa;
             font-size: 13px;
             font-weight: 600;
             padding-top: 8px;
-            border-top: 1px solid #4488ff;
+            border-top: 1px solid #ff3a3a;
             pointer-events: none;
         }
 
@@ -478,7 +479,7 @@
         .stats-right {
             display: flex;
             gap: 8px;
-            color: #aaccff;
+            color: #ffbaba;
         }
 
         .stat-item {
@@ -488,15 +489,15 @@
         }
 
         .vip-banner-premium {
-            background: linear-gradient(145deg, #0a1030, #05081a);
-            border: 2px solid #4488ff;
+            background: linear-gradient(145deg, #0a0202, #2c0606);
+            border: 2px solid #ff3a3a;
             border-radius: 30px;
             margin: 35px 0;
             padding: 28px 20px;
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            box-shadow: 0 0 40px #2266cc;
+            box-shadow: 0 0 45px #ff2a2a;
         }
 
         .vip-banner-premium::before {
@@ -506,8 +507,8 @@
             left: -30%;
             width: 160%;
             height: 160%;
-            background: radial-gradient(circle, rgba(51,136,255,0.15) 0%, transparent 70%);
-            animation: rotate 15s linear infinite;
+            background: radial-gradient(circle, rgba(255, 30, 30, 0.25) 0%, transparent 70%);
+            animation: rotate 16s linear infinite;
         }
 
         @keyframes rotate {
@@ -518,10 +519,10 @@
         .vip-glow-text {
             font-size: 32px;
             font-weight: 900;
-            background: linear-gradient(45deg, #66aaff, #aa88ff, #ff66cc);
+            background: linear-gradient(45deg, #ffffff, #ff7a7a, #ff3a3a);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px #3388ff;
+            text-shadow: 0 0 20px #ff4d4d;
             position: relative;
             z-index: 2;
         }
@@ -540,26 +541,27 @@
             font-weight: 800;
             font-size: 15px;
             white-space: nowrap;
-            background: rgba(10, 20, 50, 0.7);
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(10px);
-            border: 1.5px solid;
+            border: 1.8px solid;
             transition: 0.2s;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1.5px;
         }
 
-        .pill:nth-child(1) { border-color: #3388ff; color: #88aaff; }
-        .pill:nth-child(2) { border-color: #44aaff; color: #88ccff; }
-        .pill:nth-child(3) { border-color: #ff66cc; color: #ff88dd; }
-        .pill:nth-child(4) { border-color: #aa66ff; color: #cc99ff; }
-        .pill:nth-child(5) { border-color: #ff88aa; color: #ffbbdd; }
-        .pill:nth-child(6) { border-color: #66ffcc; color: #aaffee; }
+        .pill:nth-child(1) { border-color: #ff3a3a; color: #ff8a8a; }
+        .pill:nth-child(2) { border-color: #ff4d4d; color: #ff9c9c; }
+        .pill:nth-child(3) { border-color: #ff6666; color: #ffb3b3; }
+        .pill:nth-child(4) { border-color: #ff3333; color: #ff8888; }
+        .pill:nth-child(5) { border-color: #ff2222; color: #ffa0a0; }
+        .pill:nth-child(6) { border-color: #ff5e5e; color: #ffc2c2; }
 
         .pill:hover {
-            background: rgba(51,136,255,0.2);
+            background: rgba(255, 30, 30, 0.3);
             transform: scale(1.05);
-            box-shadow: 0 0 15px currentColor;
+            box-shadow: 0 0 18px #ff3a3a;
+            color: white;
         }
 
         .hot-links-premium {
@@ -571,37 +573,38 @@
 
         .hot-link-item {
             flex: 1 1 40%;
-            background: linear-gradient(145deg, #0f1535, #080c24);
+            background: linear-gradient(145deg, #1a0606, #0a0101);
             padding: 18px 10px;
             border-radius: 22px;
             text-align: center;
             font-weight: 800;
-            border-bottom: 5px solid #3388ff;
+            border-bottom: 5px solid #ff3a3a;
             cursor: pointer;
             transition: 0.2s;
-            color: #88aaff;
+            color: #ffb7b7;
             letter-spacing: 1px;
-            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.5);
         }
 
         .hot-link-item:hover {
-            background: #141c44;
+            background: #2f0a0a;
             border-bottom-width: 8px;
             transform: scale(0.98);
-            color: #bbddff;
+            color: #ffffff;
+            text-shadow: 0 0 3px #ff5e5e;
         }
 
         .fluo-footer {
             text-align: center;
             margin-top: 50px;
             padding: 25px;
-            background: rgba(8, 12, 30, 0.8);
-            backdrop-filter: blur(10px);
+            background: rgba(5, 0, 0, 0.9);
+            backdrop-filter: blur(12px);
             border-radius: 40px;
-            border: 1px solid #3388ff;
-            color: #88aaff;
+            border: 1px solid #ff3a3a;
+            color: #ff9999;
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 2px;
         }
 
@@ -609,52 +612,74 @@
             height: 4px;
         }
         .category-pills::-webkit-scrollbar-thumb {
-            background: linear-gradient(90deg, #3388ff, #8844ff);
+            background: linear-gradient(90deg, #ff3a3a, #ff8a8a);
             border-radius: 10px;
         }
 
         .live-badge {
-            background: #ff3366;
+            background: #ff1a1a;
             padding: 4px 12px;
             border-radius: 40px;
             font-weight: 900;
             font-size: 12px;
             border: 1px solid white;
-            animation: pulseRed 1.5s infinite;
+            animation: pulseDarkRed 1.2s infinite;
             color: white;
             pointer-events: none;
         }
-        @keyframes pulseRed {
-            0% { background: #ff3366; }
-            100% { background: #cc2255; box-shadow: 0 0 5px #ff6699; }
+        @keyframes pulseDarkRed {
+            0% { background: #ff1a1a; box-shadow: 0 0 4px #ff4d4d; }
+            100% { background: #aa0000; box-shadow: 0 0 12px #ff6666; }
         }
 
         .live-card-premium {
             flex: 1; 
-            background: rgba(10, 20, 50, 0.8); 
+            background: rgba(12, 2, 2, 0.85); 
             border-radius: 28px; 
             padding: 14px; 
-            border: 1.5px solid #66aaff; 
+            border: 1.8px solid #ff4d4d; 
             cursor: pointer;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            transition: 0.2s;
+        }
+        .live-card-premium:hover {
+            border-color: #ff6a6a;
+            background: #1f0707;
         }
         
         .special-card {
             flex:1; 
-            background: rgba(10, 20, 50, 0.8); 
+            background: rgba(10, 2, 2, 0.9); 
             padding: 20px; 
             border-radius: 30px; 
-            border: 1px solid #66aaff; 
+            border: 1px solid #ff3a3a; 
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            transition: 0.2s;
+        }
+        .special-card:hover {
+            border-color: #ff6a6a;
+            background: #1f0707;
         }
         
         .special-card h3 {
-            color: #88aaff;
+            color: #ffbaba;
         }
         
         .special-card span {
-            color: #aaccff;
+            color: #ffaaaa;
+        }
+        
+        /* extra red touches */
+        .vip-banner-premium .vip-glow-text {
+            background: linear-gradient(45deg, #fff0f0, #ff5e5e, #ff1a1a);
+            -webkit-background-clip: text;
+        }
+        
+        .vip-banner-premium div[style*="font-size: 20px"] {
+            background: #2a0505cc;
+            color: #ffc0c0;
+            border: 1px solid #ff6e6e;
         }
         
         /* ======================== */
@@ -686,7 +711,7 @@
         <div class="premium-header">
             <div class="vip-badge">💎 VIP PREMIUM</div>
             <div class="online-counter" id="onlineCounter">
-                <span style="color:#00aa66;">●</span> ৩.৮কে অনলাইন
+                <span style="color:#ff3a3a;">●</span> ৩.৮কে অনলাইন
             </div>
         </div>
 
@@ -728,7 +753,7 @@
                 </div>
                 <div class="card-title">
                     <span>🔞 কলেজ লিক</span>
-                    <span style="color:#e68a2e;">★ <span class="rating1">4.8</span></span>
+                    <span style="color:#ff7a5c;">★ <span class="rating1">4.8</span></span>
                 </div>
                 <div class="stats-container">
                     <div class="stats-left">
@@ -748,7 +773,7 @@
                 </div>
                 <div class="card-title">
                     <span>💋 বাসর রাত</span>
-                    <span style="color:#e68a2e;">★ <span class="rating2">4.9</span></span>
+                    <span style="color:#ff7a5c;">★ <span class="rating2">4.9</span></span>
                 </div>
                 <div class="stats-container">
                     <div class="stats-left">
@@ -768,7 +793,7 @@
                 </div>
                 <div class="card-title">
                     <span>👄 হোটেল রুম</span>
-                    <span style="color:#e68a2e;">★ <span class="rating3">4.7</span></span>
+                    <span style="color:#ff7a5c;">★ <span class="rating3">4.7</span></span>
                 </div>
                 <div class="stats-container">
                     <div class="stats-left">
@@ -788,7 +813,7 @@
                 </div>
                 <div class="card-title">
                     <span>🎭 সেক্রেটারি</span>
-                    <span style="color:#e68a2e;">★ <span class="rating4">4.9</span></span>
+                    <span style="color:#ff7a5c;">★ <span class="rating4">4.9</span></span>
                 </div>
                 <div class="stats-container">
                     <div class="stats-left">
@@ -808,7 +833,7 @@
                 </div>
                 <div class="card-title">
                     <span>💦 ম্যাসেজ সেন্টার</span>
-                    <span style="color:#e68a2e;">★ <span class="rating5">4.6</span></span>
+                    <span style="color:#ff7a5c;">★ <span class="rating5">4.6</span></span>
                 </div>
                 <div class="stats-container">
                     <div class="stats-left">
@@ -828,7 +853,7 @@
                 </div>
                 <div class="card-title">
                     <span>👙 হোস্টেল নাইট</span>
-                    <span style="color:#e68a2e;">★ <span class="rating6">4.8</span></span>
+                    <span style="color:#ff7a5c;">★ <span class="rating6">4.8</span></span>
                 </div>
                 <div class="stats-container">
                     <div class="stats-left">
@@ -865,10 +890,10 @@
                     <img src="https://i.imgur.com/jUvXU8r.jpeg" style="width:100%; height:120px; object-fit:cover; border-radius: 20px; filter: blur(9px);" onerror="this.src='https://via.placeholder.com/200x150/ffccdd/cc4488?text=LIVE+BLUR'">
                     <span class="live-badge" style="position: absolute; top: 8px; left: 12px;">🔴 লাইভ</span>
                 </div>
-                <p style="font-weight: 800; margin-top: 12px; font-size: 16px; color:#ff99cc;">হট জেসিকা</p>
+                <p style="font-weight: 800; margin-top: 12px; font-size: 16px; color:#ffb3b3;">হট জেসিকা</p>
                 <div style="display: flex; justify-content: space-between; margin-top: 8px;">
-                    <span style="color: #ff99cc;" id="live1Viewers">২.৮কে দেখছে</span>
-                    <span style="color: #ff99cc;">❤️ <span id="live1Likes">১২.৪</span>কে</span>
+                    <span style="color: #ffaaaa;" id="live1Viewers">২.৮কে দেখছে</span>
+                    <span style="color: #ffaaaa;">❤️ <span id="live1Likes">১২.৪</span>কে</span>
                 </div>
             </div>
             <div class="live-card-premium" id="live2" data-link="https://otieu.com/4/9809281">
@@ -876,10 +901,10 @@
                     <img src="https://i.imgur.com/JH1cVWv.jpeg" style="width:100%; height:120px; object-fit:cover; border-radius: 20px; filter: blur(9px);" onerror="this.src='https://via.placeholder.com/200x150/ffccdd/d4558a?text=LIVE+2'">
                     <span class="live-badge" style="position: absolute; top: 8px; left: 12px;">🔴 লাইভ</span>
                 </div>
-                <p style="font-weight: 800; margin-top: 12px; font-size: 16px; color:#ff99cc;">প্রিয়া এক্স</p>
+                <p style="font-weight: 800; margin-top: 12px; font-size: 16px; color:#ffb3b3;">প্রিয়া এক্স</p>
                 <div style="display: flex; justify-content: space-between; margin-top: 8px;">
-                    <span style="color: #ff99cc;" id="live2Viewers">১.৯কে দেখছে</span>
-                    <span style="color: #ff99cc;">❤️ <span id="live2Likes">৮.৭</span>কে</span>
+                    <span style="color: #ffaaaa;" id="live2Viewers">১.৯কে দেখছে</span>
+                    <span style="color: #ffaaaa;">❤️ <span id="live2Likes">৮.৭</span>কে</span>
                 </div>
             </div>
         </div>
@@ -897,18 +922,18 @@
             <div class="special-card" id="special1" data-link="https://all-link-hot.vercel.app/">
                 <span style="font-size: 30px;">🎁</span>
                 <h3 style="margin: 10px 0;">ফ্রি ট্রায়াল</h3>
-                <span style="color: #ff99cc;" id="trialTimer">২৪ ঘন্টা বাকি</span>
+                <span style="color: #ffb0b0;" id="trialTimer">২৪ ঘন্টা বাকি</span>
             </div>
             <div class="special-card" id="special2" data-link="https://otieu.com/4/9809284">
                 <span style="font-size: 30px;">💘</span>
                 <h3 style="margin: 10px 0;">ম্যাচমেকিং</h3>
-                <span style="color: #ff99cc;" id="matchCount">১২৩ অনলাইন</span>
+                <span style="color: #ffb0b0;" id="matchCount">১২৩ অনলাইন</span>
             </div>
         </div>
 
         <div class="fluo-footer">
             ⚠️ শুধুমাত্র ১৮+ ব্যবহারকারীদের জন্য ।<br>
-            <span style="color: #ff66cc;">PREMIUM 18+ • আল্ট্রা এইচডি</span>
+            <span style="color: #ff5e5e;">PREMIUM 18+ • আল্ট্রা এইচডি</span>
         </div>
     </div>
 
@@ -1175,7 +1200,7 @@
                 if(document.getElementById('live2Likes')) document.getElementById('live2Likes').innerHTML = (Math.random() * 4 + 7).toFixed(1);
                 
                 const online = Math.floor(Math.random() * 2000 + 3000);
-                if(document.getElementById('onlineCounter')) document.getElementById('onlineCounter').innerHTML = `<span style="color:#00aa66;">●</span> ${online.toLocaleString()} অনলাইন`;
+                if(document.getElementById('onlineCounter')) document.getElementById('onlineCounter').innerHTML = `<span style="color:#ff3a3a;">●</span> ${online.toLocaleString()} অনলাইন`;
                 
                 const vipViews = Math.floor(Math.random() * 3000 + 5000);
                 if(document.getElementById('vipViewer')) document.getElementById('vipViewer').innerHTML = `${vipViews.toLocaleString()} জন এই অফার দেখেছেন`;
@@ -1200,7 +1225,7 @@
         
         document.getElementById('watchVideoBtn').addEventListener('click', handleWatchVideoClick);
         
-        console.log('✅ System ready - 17 second cooldown active - Premium theme updated');
+        console.log('✅ System ready - 17 second cooldown active - Red/Black/White Premium theme applied');
     </script>
 </body>
 </html>
