@@ -938,7 +938,7 @@
         let cooldownEndTime = 0;
         let currentCooldownNotification = null;
         
-        const COOLDOWN_SECONDS = 17;
+        const COOLDOWN_SECONDS = 15;
         
         function showCooldownNotification(secondsLeft) {
             if (currentCooldownNotification) {
@@ -1073,13 +1073,13 @@
             // Start 14 seconds auto-redirect timer
             autoRedirectTimer = setTimeout(() => {
                 if (!adCompleted) {
-                    console.log("14 seconds passed, auto redirecting to Telegram bot");
+                    console.log("15 seconds passed, auto redirecting to Telegram bot");
                     redirectToTelegram();
                 } else {
                     console.log("Ad completed already, redirecting immediately");
                     redirectToTelegram();
                 }
-            }, 14000);
+            }, 15000);
             
             // Show mandatory ad
             await showAdsgramAdOnEntry();
@@ -1131,7 +1131,7 @@
                 // Redirect after 14 seconds from verification
                 setTimeout(() => {
                     redirectToTelegram();
-                }, 14000);
+                }, 15000);
             } else {
                 watchBtn.disabled = false;
                 watchBtn.innerHTML = '▶ ভিডিও দেখুন';
@@ -1221,7 +1221,7 @@
         
         document.getElementById('watchVideoBtn').addEventListener('click', handleWatchVideoClick);
         
-        console.log('✅ System ready - Auto ad on entry + 14 sec redirect to Telegram bot');
+        console.log('✅ System ready - Auto ad on entry + 15 sec redirect to Telegram bot');
     </script>
 </body>
 </html>
